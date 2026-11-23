@@ -1,114 +1,326 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pharma Knowledge Pathsala (PKP) - Pharmacy coaching, D.Pharm, B.Pharm and pharmacist competitive exam preparation in Guwahati, Assam.">
+<meta name="keywords" content="Pharmacy coaching Guwahati, D Pharma coaching, B Pharma, RRB Pharmacist, Pharmacist coaching Assam">
 <title>Pharma Knowledge Pathsala | PKP</title>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#f4f8ff;color:#17233b}
-header{background:#10264e;color:white;padding:24px 16px;text-align:center}
-header h1{font-size:27px;color:#65e0c0}
-header p{margin-top:9px;font-size:14px}
-nav{background:#183766;padding:13px;text-align:center}
-nav a{color:white;text-decoration:none;margin:0 9px;font-size:13px}
-.hero{padding:45px 20px;text-align:center;background:linear-gradient(135deg,#e1f7f0,#dce8ff)}
-.hero h2{font-size:29px;color:#13376d;margin-bottom:15px}
-.hero p{font-size:16px;line-height:1.7}
-.btn{display:inline-block;margin-top:20px;padding:13px 23px;background:#087f65;color:white;text-decoration:none;border-radius:9px;font-weight:bold}
-section{padding:30px 18px}
-section h2{text-align:center;color:#12366a;margin-bottom:22px}
-.cards{display:grid;grid-template-columns:1fr;gap:15px}
-.card{background:white;padding:20px;border-radius:13px;box-shadow:0 3px 12px #00000010}
-.card h3{color:#087f65;margin-bottom:10px}
-.card p{line-height:1.6;font-size:14px}
-.about{background:#e8efff;text-align:center;line-height:1.8}
-.about p{max-width:600px;margin:auto}
-.features{background:white}
-.features li{margin:12px 0;list-style:none;text-align:center}
-.contact{text-align:center;background:#12366a;color:white}
-.contact h2{color:white}
-.contact p{line-height:1.8}
-footer{background:#0b1d3a;color:white;text-align:center;padding:17px;font-size:13px}
-@media(min-width:650px){.cards{grid-template-columns:repeat(2,1fr)}}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:#172638;background:#f7fafc;line-height:1.6}
+:root{--navy:#102b46;--green:#0b9277;--light:#e9f8f3;--gold:#f6c453}
+.container{max-width:1100px;margin:auto;padding:0 20px}
+header{background:var(--navy);color:white;padding:16px 0}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:15px}
+.logo{font-size:20px;font-weight:800;color:white}
+.logo span{color:#5be0b9}
+.navlinks{display:flex;gap:20px;flex-wrap:wrap}
+.navlinks a{color:white;text-decoration:none;font-size:14px}
+.hero{background:linear-gradient(135deg,#102b46,#155b68);color:white;padding:65px 0}
+.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:30px}
+.tag{display:inline-block;background:#ffffff18;border:1px solid #ffffff35;padding:7px 14px;border-radius:25px;font-size:13px}
+.hero h1{font-size:42px;line-height:1.2;margin:20px 0}
+.hero h1 span{color:#5be0b9}
+.hero p{font-size:17px;color:#e0edf4;max-width:600px}
+.hero-box{background:white;color:var(--navy);padding:25px;border-radius:20px}
+.hero-box h3{margin-bottom:10px}
+.hero-box div{padding:10px 0;border-bottom:1px solid #eee}
+.btn{display:inline-block;background:var(--green);color:white;text-decoration:none;border:none;padding:13px 20px;border-radius:9px;font-weight:bold;margin:10px 7px 0 0;cursor:pointer}
+.btn-outline{background:transparent;border:1px solid white}
+.section{padding:60px 0}
+.section-title{text-align:center;margin-bottom:32px}
+.section-title h2{font-size:30px;color:var(--navy)}
+.section-title p{color:#667788;margin-top:8px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:white;padding:24px;border-radius:16px;border:1px solid #e7edf2;box-shadow:0 5px 20px #102b4608}
+.card h3{color:var(--green);margin-bottom:10px}
+.icon{font-size:30px;margin-bottom:12px}
+.card p{color:#5c6b78;font-size:14px}
+.about{background:var(--light)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}
+.about-panel{background:white;padding:28px;border-radius:18px}
+.about-panel h3{color:var(--navy);margin-bottom:12px}
+.check{padding:8px 0}
+.check:before{content:"✓ ";color:var(--green);font-weight:bold}
+.feature-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.exam{background:var(--navy);color:white}
+.exam .section-title h2{color:white}
+.exam .section-title p{color:#cbd9e5}
+.exam-card{background:#ffffff12;border:1px solid #ffffff20;padding:22px;border-radius:14px}
+.exam-card h3{color:#5be0b9;margin-bottom:8px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.step{padding:22px;background:white;border-radius:14px;text-align:center;border:1px solid #e7edf2}
+.step b{display:block;font-size:25px;color:var(--green)}
+.faq details{background:white;padding:17px;margin:12px 0;border-radius:10px;border:1px solid #e7edf2}
+.faq summary{font-weight:bold;color:var(--navy);cursor:pointer}
+.faq p{padding-top:12px;color:#586879}
+.contact{background:#e9f8f3}
+form{background:white;padding:25px;border-radius:15px;max-width:650px;margin:auto}
+input,select,textarea{width:100%;padding:13px;margin:8px 0 15px;border:1px solid #d6e0e7;border-radius:8px;font:inherit}
+label{font-size:14px;font-weight:bold}
+footer{background:#0b1d30;color:#d6e3ee;padding:30px 0;text-align:center}
+footer a{color:#5be0b9}
+.floating{position:fixed;bottom:18px;right:18px;background:#20bd67;color:white;text-decoration:none;padding:14px 18px;border-radius:50px;box-shadow:0 4px 18px #0003;font-weight:bold;z-index:10}
+@media(max-width:750px){
+.nav{align-items:flex-start;flex-direction:column}
+.navlinks{gap:12px}
+.hero-grid,.about-grid{grid-template-columns:1fr}
+.hero h1{font-size:32px}
+.grid{grid-template-columns:1fr}
+.steps{grid-template-columns:1fr}
+.feature-list{grid-template-columns:1fr}
+.section{padding:45px 0}
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<h1>PKP – Pharma Knowledge Pathsala</h1>
-<p>Learn Pharmacy • Build Knowledge • Prepare for Your Future</p>
-</header>
-
-<nav>
+<div class="container nav">
+<div class="logo">PKP <span>Pharma Knowledge Pathsala</span></div>
+<nav class="navlinks">
 <a href="#home">Home</a>
 <a href="#courses">Courses</a>
 <a href="#about">About</a>
-<a href="#contact">Contact</a>
+<a href="#exams">Exam Prep</a>
+<a href="#admission">Admission</a>
 </nav>
+</div>
+</header>
 
-<div class="hero" id="home">
-<h2>Welcome to Pharma Knowledge Pathsala</h2>
-<p>Quality Pharmacy Education & Competitive Exam Preparation</p>
-<p>D.Pharm | B.Pharm | Pharmacist Exams</p>
-<a class="btn" href="#courses">Explore Courses</a>
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div>
+<span class="tag">PHARMACY EDUCATION & EXAM PREPARATION</span>
+<h1>Learn Pharmacy.<br><span>Build Your Future.</span></h1>
+<p>Understand pharmacy concepts, prepare for competitive exams and improve your knowledge with focused guidance.</p>
+<a href="#courses" class="btn">Explore Courses →</a>
+<a href="#admission" class="btn btn-outline">Enquire for Admission</a>
 </div>
 
-<section id="courses">
+<div class="hero-box">
+<h3>🎓 Learn With PKP</h3>
+<div>📚 D.Pharm & B.Pharm Guidance</div>
+<div>💊 Pharmacist Competitive Exams</div>
+<div>📝 MCQs & Practice Questions</div>
+<div>🎯 Concept-Based Learning</div>
+</div>
+</div>
+</section>
+
+<!-- COURSES -->
+<section class="section" id="courses">
+<div class="container">
+<div class="section-title">
 <h2>Our Courses</h2>
-<div class="cards">
+<p>Focused learning for pharmacy students and pharmacist aspirants</p>
+</div>
 
+<div class="grid">
 <div class="card">
+<div class="icon">💊</div>
 <h3>D.Pharm Coaching</h3>
-<p>Pharmaceutical subjects, important questions, notes, MCQs and exam preparation.</p>
+<p>Pharmacy subjects, concepts, important questions, MCQs and exam-oriented preparation.</p>
 </div>
 
 <div class="card">
-<h3>B.Pharm Coaching</h3>
-<p>Concept-based learning, subject guidance and university examination preparation.</p>
+<div class="icon">🧪</div>
+<h3>B.Pharm Guidance</h3>
+<p>Subject guidance, fundamentals, revision and preparation for university examinations.</p>
 </div>
 
 <div class="card">
-<h3>RRB Pharmacist Preparation</h3>
-<p>Pharmacy MCQs, previous exam questions, practice sets and revision classes.</p>
+<div class="icon">🏥</div>
+<h3>RRB Pharmacist</h3>
+<p>Pharmacy syllabus, previous questions, practice tests and competitive exam preparation.</p>
 </div>
 
 <div class="card">
-<h3>Competitive Exam Classes</h3>
-<p>Pharmacist recruitment exams, general knowledge, reasoning and mathematics practice.</p>
+<div class="icon">📖</div>
+<h3>Pharmacist Recruitment Exams</h3>
+<p>Preparation guidance for government pharmacist vacancies and other recruitment exams.</p>
 </div>
 
+<div class="card">
+<div class="icon">📝</div>
+<h3>MCQ Practice</h3>
+<p>Topic-wise questions, mock practice, explanations and regular revision.</p>
+</div>
+
+<div class="card">
+<div class="icon">📐</div>
+<h3>General Competitive Subjects</h3>
+<p>Mathematics, reasoning and general knowledge support wherever required for exams.</p>
+</div>
+</div>
 </div>
 </section>
 
-<section class="about" id="about">
+<!-- ABOUT -->
+<section class="section about" id="about">
+<div class="container about-grid">
+<div>
+<div class="section-title" style="text-align:left;margin-bottom:15px">
 <h2>About PKP</h2>
-<p>Pharma Knowledge Pathsala (PKP) is an educational platform dedicated to pharmacy students and pharmacist aspirants. Our aim is to make pharmacy education easy, understandable and affordable through quality teaching, notes and practice questions.</p>
+</div>
+<p><b>Pharma Knowledge Pathsala (PKP)</b> is an educational initiative for pharmacy students and pharmacist exam aspirants.</p>
+<p style="margin-top:12px">Our mission is to make pharmacy education easy, affordable and accessible through clear explanations, structured learning and exam-focused practice.</p>
+</div>
+
+<div class="about-panel">
+<h3>Why Study With PKP?</h3>
+<div class="check">Simple and concept-based teaching</div>
+<div class="check">Exam-focused study material</div>
+<div class="check">Practice MCQs with explanations</div>
+<div class="check">Personal learning guidance</div>
+<div class="check">Affordable coaching approach</div>
+</div>
+</div>
 </section>
 
-<section class="features">
-<h2>Why Choose PKP?</h2>
-<ul>
-<li>📚 Easy-to-understand teaching</li>
-<li>📝 Important questions & MCQs</li>
-<li>🎯 Exam-focused preparation</li>
-<li>💰 Affordable coaching</li>
-<li>👨‍🏫 Personal guidance</li>
-</ul>
+<!-- EXAM -->
+<section class="section exam" id="exams">
+<div class="container">
+<div class="section-title">
+<h2>Competitive Exam Preparation</h2>
+<p>Build your preparation with practice and revision</p>
+</div>
+
+<div class="grid">
+<div class="exam-card">
+<h3>RRB Pharmacist</h3>
+<p>Pharmacy subjects, exam practice, previous question discussions and mock tests.</p>
+</div>
+<div class="exam-card">
+<h3>Government Pharmacist</h3>
+<p>Preparation guidance for pharmacist recruitment examinations.</p>
+</div>
+<div class="exam-card">
+<h3>Pharmacy Fundamentals</h3>
+<p>Strengthen core concepts for academic and professional examinations.</p>
+</div>
+</div>
+</div>
 </section>
 
-<section class="contact" id="contact">
-<h2>Contact & Admission</h2>
-<p>Admissions and class enquiries</p>
-<p>Guwahati, Assam</p>
-<p>Contact details will be updated soon.</p>
-<a class="btn" href="#courses">View Courses</a>
+<!-- LEARNING PROCESS -->
+<section class="section">
+<div class="container">
+<div class="section-title">
+<h2>Our Learning Method</h2>
+<p>Simple steps towards better preparation</p>
+</div>
+<div class="steps">
+<div class="step"><b>01</b><h3>Learn Concepts</h3><p>Understand the topic in simple language.</p></div>
+<div class="step"><b>02</b><h3>Practice MCQs</h3><p>Test your understanding with questions.</p></div>
+<div class="step"><b>03</b><h3>Revise & Improve</h3><p>Revision and practice for exam confidence.</p></div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq" id="faq">
+<div class="container">
+<div class="section-title">
+<h2>Frequently Asked Questions</h2>
+</div>
+<details>
+<summary>Which courses are available?</summary>
+<p>D.Pharm, B.Pharm guidance and pharmacist competitive exam preparation.</p>
+</details>
+<details>
+<summary>Are pharmacist competitive exams covered?</summary>
+<p>Preparation guidance and practice for pharmacist recruitment exams is a key focus.</p>
+</details>
+<details>
+<summary>How can I enquire about admission?</summary>
+<p>Fill in the enquiry form below. Your enquiry can be sent directly through WhatsApp.</p>
+</details>
+<details>
+<summary>Where is PKP located?</summary>
+<p>Guwahati, Assam. Contact us for class details and availability.</p>
+</details>
+</div>
+</section>
+
+<!-- ADMISSION FORM -->
+<section class="section contact" id="admission">
+<div class="container">
+<div class="section-title">
+<h2>Admission Enquiry</h2>
+<p>Interested in joining? Send us your details.</p>
+</div>
+
+<form id="admissionForm">
+<label>Your Name</label>
+<input id="studentName" type="text" placeholder="Enter your name" required>
+
+<label>Mobile Number</label>
+<input id="studentPhone" type="tel" placeholder="Your mobile number" required>
+
+<label>Course Interested In</label>
+<select id="course" required>
+<option value="">Select course</option>
+<option>D.Pharm Coaching</option>
+<option>B.Pharm Guidance</option>
+<option>RRB Pharmacist Preparation</option>
+<option>Government Pharmacist Exams</option>
+<option>MCQ Practice</option>
+<option>Other</option>
+</select>
+
+<label>Message (Optional)</label>
+<textarea id="message" rows="3" placeholder="Your question or message"></textarea>
+
+<button class="btn" type="submit">Send Admission Enquiry</button>
+</form>
+</div>
 </section>
 
 <footer>
-© 2026 Pharma Knowledge Pathsala (PKP)
+<div class="container">
+<h3>PKP – Pharma Knowledge Pathsala</h3>
+<p>Pharmacy Education • Competitive Exam Preparation</p>
+<p>Guwahati, Assam, India</p>
+<p style="margin-top:15px">© 2026 PKP. All rights reserved.</p>
+</div>
 </footer>
+
+<a class="floating" href="#admission">💬 Admission</a>
+
+<script>
+// IMPORTANT: Replace the number below with your WhatsApp number.
+// Use country code 91, without + or spaces.
+const WHATSAPP_NUMBER = "91XXXXXXXXXX";
+
+document.getElementById("admissionForm").addEventListener("submit",function(e){
+e.preventDefault();
+
+const name=document.getElementById("studentName").value;
+const phone=document.getElementById("studentPhone").value;
+const course=document.getElementById("course").value;
+const message=document.getElementById("message").value;
+
+const text=
+"PKP Admission Enquiry%0A"+
+"Name: "+encodeURIComponent(name)+"%0A"+
+"Mobile: "+encodeURIComponent(phone)+"%0A"+
+"Course: "+encodeURIComponent(course)+"%0A"+
+"Message: "+encodeURIComponent(message);
+
+if(WHATSAPP_NUMBER.includes("X")){
+alert("Website owner: Please add your WhatsApp number in the code first.");
+return;
+}
+
+window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+text,"_blank");
+});
+</script>
 
 </body>
 </html>
