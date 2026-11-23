@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://narottam644.github.io/PKP-/sitemap.xml
